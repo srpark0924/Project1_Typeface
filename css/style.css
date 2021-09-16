@@ -1,0 +1,41 @@
+ * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > div {
+    position: relative;
+}
+
+body > div > div:first-child {
+    margin: 100px;
+    width: 22px;
+    height: 130px;
+    background-color: black;
+    border-radius: 22px;
+    position:relative;
+}
+
+body > div > div:nth-child(2) {
+    margin: 100px;
+    width: 22px;
+    height: 70px;
+    transform: rotate(90deg);
+    background-color: black;
+    border-radius: 22px;
+    position: absolute;
+    top: -15px;
+    left: 25px;
+}
+
+body > div > div:last-child {
+    height: 21px;
+    width: 21px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom:0;
+    left: 150px;
+}
