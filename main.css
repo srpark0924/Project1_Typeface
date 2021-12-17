@@ -1,0 +1,8080 @@
+/*
+Project Name: Feeze
+Description: Pure CSS font #5
+Author: @c4rin3  
+Author URI: http://c4rin3.vituelles.fr
+*/
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #e3e4e8;
+  --fg: #2e3138;
+  --primary: #255ff4;
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+body {
+  background: #1fc582;
+  display: grid;
+  font: 1em/1.5 sans-serif;
+  height: 100vh;
+  place-items: center;
+}
+  
+  .wrapper {
+    position: relative;
+    margin: 5% auto;
+    width: 80%;
+    padding: 5%;
+    background: #1fc582;
+    /* magenta */
+    /* color: #E20079; */
+    overflow: hidden;
+    border-radius: 0.5em;
+    border: 0em solid #fae62d;
+    min-width:1300px;
+    min-height:980px;
+  }
+  
+  header, .container, footer {
+    margin: 0 auto;
+    width: 100%;
+  }
+  header {
+    padding: 0 0 1em 0;
+  }
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .word {
+    font-size: 15px;
+    display: inline-block;
+    display: block;
+    padding: 0.5em 0 0;
+
+  }
+
+  section {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+  }
+  .introSection{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #191414;
+  }
+  .sectionSize {
+    width:800px;
+  }
+  .introSection .upperSection {
+    transform: translateX(-150px);
+
+  }
+
+  .introSection .underSection {
+    transform: translateX(150px);
+  }
+  /* WRAPPER DECO */
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 0.5em; */
+    /* border-radius: 0.25em; */
+    background: currentColor;
+  }
+  .wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* height: 0.5em; */
+    /* border-radius: 0.25em; */
+    background: currentColor;
+    mix-blend-mode: multiply;
+  }
+
+
+  .wrapperA{
+    float:left;
+    width:80%;
+  }
+
+  
+  .wrapperB{
+    float:right;
+    width:18%;
+    height:100%;
+    text-align: center;
+  }
+
+  .wrapper > .wrapperB > .buttons {
+    margin-left:100px;
+    width:200px;
+    display:inline-block;
+    padding:100px 100px;
+    /* display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; */
+    line-height: 500%;
+    min-height: 900px;
+  }
+
+  .wrapper > .wrapperB > .buttons p {
+    margin: 100px 10px;
+    width:130px;height:130px;border-radius:300px;background-color:#fae62d;color:#191414;font-size:22px;font-weight: 900;line-height: 600%;text-align: center; 
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* border-radius: 0.25em; */
+    /* background: #009DE0; */
+    mix-blend-mode: multiply;
+  }
+  section::after {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 0.25em;
+    /* background: #009DE0; */
+    mix-blend-mode: multiply;
+  }
+  
+  /* LETTERS SPEC.
+  -------------------------------------------------- */
+  .letter {
+    width: 3em; /* 3 x body font-size */
+    height: 5em; /* 7 x body font-size */
+    margin: 2em 1em;
+    margin: 1em 0.5em;
+    position: relative;
+    display: inline-block;
+
+  }
+  /* .letter.M, .letter.W {
+    width: 5em;
+  }
+  .letter.D, .letter.B, .letter.P, .letter.R, .letter.K {
+    width: 3.5em;
+  }
+  .letter.I {
+    width: 1em;
+  }
+  header .letter {
+    margin: 1em 0.25em;
+  }
+  
+  .letter p {
+    display: none;
+  } */
+
+  :root {
+
+
+    --w-box : 70px;
+    --h-box : 70px;
+    --h-box-lg : 158px;
+    --w-init :23px;
+    --h-init :23px;
+    --h-incr : calc(23px + 35px);
+    --w-spce : calc(70px - 23px - 23px);
+    --p-y-sl-init : 35px;
+    --p-y-c-init : 9px;
+    --p-x-c-init-inner : 17px;
+    --p-y-c-init-inner : 28px;
+    --p-x-spce : 12px;
+    --p-y-spce : 4px;
+
+  }
+ /*  -------------------------------------------------- */
+ 
+ .dot{
+  opacity:1;
+}
+.undot{
+  opacity:0;
+}
+
+ .circle-1x1 {
+    width: 23px;
+    height: 23px;
+    border-radius: 100px;
+    background-color: transparent;
+  } 
+
+
+  .ball{
+    width: 23px;
+    height: 23px;
+    
+    border-radius: 100px;
+    background-color: transparent;
+  } 
+
+
+  .circle-7x7 {
+    width: 79px;
+    height: 79px;
+    background: transparent;
+    border-radius: 100px;
+}
+
+
+.circle-8x8 {
+  width: 79px;
+  height: 79px;
+  background: transparent;
+  border-radius: 100px;
+}
+
+.circle-3x3 {
+  
+  width: calc(var(--w-box) / 3 + 0px);
+  height: calc(var(--w-box) / 3 + 0px);
+  background: transparent;
+  border-radius: 30px;
+
+}
+
+.circle-4x4 {
+  width: 32.8px;
+  height: 32.8px;
+  background: yellow;
+  border-radius: 100px;
+
+}
+
+.circle-segment {
+  width: calc(var(--w-box) * 1 );
+  height: calc(var(--h-box) * 1 );
+  /* border-radius: 100%; */
+  background: transparent;
+
+  
+}
+
+.circle-segment-lg {
+  width: 79px;
+  height: 79px;
+  /* border-radius: 100%; */
+  background: transparent;
+
+  
+}
+
+.circular-blanket {
+  
+  width: calc( var(--w-box) * 1.5 );
+  height: calc( var(--h-box) * 0.8 );
+  
+}
+
+
+.circular-blanket-vertical {
+  
+  width: 54px;
+  height: 79.5px;
+  
+}
+
+
+.base-line{
+  position:absolute;
+  top:158px;
+  padding:1px;
+  border-top:1px black solid;
+  background-color: black;
+  width:79px;
+  height:1px;
+}
+@keyframes move-line {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;
+      background-color: #191414;
+    }
+}
+
+
+@keyframes move-up {
+  0% {
+      left: 0;
+      bottom: -25px;
+      background-color: #fae62d;
+     
+    }
+    
+
+    100% {
+      left: 0;
+      bottom: 15px;
+      background-color: #fae62d;
+     
+    }
+}
+
+@keyframes move-down {
+  0% {
+    top: var(--p-y-sl-init);
+    left: calc(23px + var(--w-spce));
+      background-color: #fae62d;
+     
+    }
+    
+   
+    100% {
+      top: var(--h-box);
+      left: calc(23px + var(--w-spce));
+      background-color: #fae62d;
+     
+    }
+}
+
+.letter.A {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box);
+  margin-left:50px;
+  margin-top:90px;
+
+}
+
+/* .letter.A > .pillar :nth-child(n):hover{  
+   animation-play-state:running; 
+} */
+
+
+  .letter.A > .pillar :nth-child(1){              /* 1. left pillar */
+    position: absolute;
+
+    left: 0.25px;
+    bottom: -22px;
+    background-color: transparent;
+    animation: move-line 0.6s linear;
+    animation-delay: 0.1s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:900;
+    animation-play-state:paused; 
+
+  }
+ 
+
+  .letter.A > .pillar :nth-child(2){                /* 3. right pillar */
+    position: absolute;
+    top: 34px;
+    left: 56px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+
+    animation: move-line 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    
+    animation-play-state:paused; 
+  }
+
+
+  .letter.A > .pillar :nth-child(3){                    /* 1-1. left ball */
+    position: absolute;
+
+    background-color: #fae62d;
+   
+    animation: move-up-a1 0.6s linear ;
+    animation-delay: 0s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:1000;
+    animation-play-state:paused; 
+
+  }
+
+  
+@keyframes move-up-a1 {
+  0% {
+    left: 0px;
+    bottom: -12.5px;
+      background-color: #fae62d;
+    }
+    
+    99.9% {
+      left: 0px;
+      bottom: 15px;
+      background-color: #fae62d;
+    }
+    100% {
+      left: 0;
+      bottom: 15px;
+      background-color: transparent;
+      
+     
+    }
+}
+
+
+  .letter.A > .pillar :nth-child(4){                        /* 1-1. right ball */        
+    position: absolute;
+    top: var(--p-y-sl-init);
+    left: 56px;
+
+    background-color: transparent;
+    animation: move-down-a 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:1000;
+    animation-play-state:paused; 
+
+  }
+  @keyframes move-down-a {
+    0% {
+      top: var(--p-y-sl-init);
+      left: 56px;
+        background-color: #fae62d;
+       
+      }
+      
+     
+      100% {
+        top: var(--h-box);
+        left: 56px;
+        background-color: #fae62d;
+       
+      }
+  }
+  
+
+
+  .letter.A > .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+    position: absolute;
+    background: #1fc582;
+    overflow: hidden;
+    top: 7px;
+    left: 0px;
+    z-index:  700;
+    
+  }
+
+  
+  .letter.A > .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+    position: absolute;
+    top: calc( var(--w-box) / 2 );
+    left: 9px  ;
+    background: #191414;
+    transform-origin: calc(var(--w-box) / 2) 0;
+    
+
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-duration: 0.38s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.58s;
+    z-index:600;
+    animation-play-state:paused; 
+
+  }
+
+  .letter.A > .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+    position: absolute;
+    
+    left: 0px;
+    bottom: 0;
+    transform-origin: calc(var(--w-box) / 2 - 0px ) 0;
+    transform: translateX(-50%);
+    animation-name: rotate-lead;
+    background-color: transparent;
+    overflow: hidden;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.55s;
+    z-index:700;
+    animation-play-state:paused; 
+
+  }
+
+  .letter.A > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+    position: absolute;
+    background-color: #1fc582;
+    top: 31px;
+    left: 23.2px;
+    z-index:900;
+  }
+
+
+  .letter.A > .semi-circle :nth-child(4){    /* blanket upper */
+    position: absolute;
+    background: #1fc582;
+    top: -10px;
+    left: 10px;
+    transform: translateX(-25%);
+    z-index:600;
+    
+
+  }
+
+  .letter.A > .semi-circle :nth-child(5){    /* blanket under */
+    position: absolute;
+    background: #1fc582;
+    top: 42px;
+    transform: translateX(-15%);
+    z-index:800;
+    
+  }
+
+
+
+
+  @keyframes rotate {
+
+    0%{
+      transform: rotate(0deg);
+    }
+
+    100%{
+      transform: rotate(180deg);
+    }
+
+}
+
+
+@keyframes rotate-lead {
+
+  0%{
+    transform: rotate(-20deg);
+   
+    background: #fae62d;
+  }
+
+  100%{
+    transform: rotate(260deg);
+   
+    background: #fae62d;
+  }
+
+}
+ 
+
+
+
+.letter.B {
+  position: relative;
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+.letter.B > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:23px;
+  left: 0px;
+
+  animation: draw-down-b1 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-b1 {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 135px;
+      background-color: #191414;
+    }
+}
+
+.letter.B > .pillar :nth-child(2){                /* 2. left-right upper pillar */
+  position: absolute;
+  top: 79px;
+  left: 0px;
+  background-color: transparent;
+  animation: draw-right-b1 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-b1 {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 68px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.B > .pillar :nth-child(3){                /* 3. right-left under pillar */
+  position: absolute;
+  top: 135px;
+  right: 0px;
+  background-color: transparent;
+  animation: draw-right-b1 0.4s linear ;
+  animation-delay: 1.5s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+.letter.B > .pillar :nth-child(4){                    /* 1-1. top-down  ball */
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+  background-color: #fae62d;
+  animation: move-down-b1 0.6s linear ;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  z-index:2000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-b1 {
+  0% {
+      
+    bottom:135px;
+    left: 0px;
+    
+    background-color: #fae62d;
+      
+  
+      }
+    
+   
+    100% {
+    bottom:0px;
+    left: 0px;
+      
+    background-color: #fae62d;
+      
+
+    }
+}
+
+
+
+.letter.B > .pillar :nth-child(5){                /* 2. left-right upper ball */
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-right-b-upper1 0.6s linear ;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-b-upper1 {
+  0% {
+    top: 79px;
+    left: 0px;
+      background-color: transparent;
+    }
+    0.1% {
+    top: 79px;
+    left: 0px;
+        background-color: #fae62d;
+      }
+    
+   
+  100% {
+    top: 79px;
+    left: 53px;
+     background-color: #fae62d;
+    
+  }
+}
+
+.letter.B > .pillar :nth-child(6){                /* 3. right-left under ball */
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-left-b-under1 0.5s linear ;
+  animation-delay: 1.7s;
+  animation-fill-mode: backwards;
+  z-index:2300;
+  animation-play-state:paused; 
+}
+
+@keyframes move-left-b-under1 {
+  0% {
+    top: 135px;
+    right: 0px;
+    background-color: transparent;
+    }
+    0.1% {
+    top: 135px;
+    right: 0px;
+    background-color: #fae62d;
+      }
+    
+   
+  100% {
+    top: 135px;
+    right: 53px;
+    background-color: #fae62d;
+    
+  }
+}
+
+.letter.B > .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left : 12.5px;
+  z-index:  700;
+}
+
+
+.letter.B > .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: -40px  ;
+  background: #191414;
+  transform-origin: 79px 39.5px;
+  
+
+  animation-name: rotate-vertical;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.B > .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+  position: absolute;
+  
+  top: 79px;
+  left: 34px;
+  /*  */
+  /* transform: translateX(-50%); */
+  
+  animation: rotate-vertical-lead-b1 0.6s linear ;
+  background-color:transparent;
+  transform-origin: 20px 39.5px;
+
+  /* overflow: hidden; */
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1.1s;
+  /* animation-direction:initial; */
+  z-index:3850;
+  animation-play-state:paused; 
+}
+
+
+@keyframes rotate-vertical-lead-b1 {
+
+  0%{
+    transform: rotate( 0deg);
+    background: transparent;
+  }
+  
+  1%{
+    transform: rotate( 0deg);
+    background: #fae62d;
+  }
+
+  100%{
+    transform: rotate(180deg);
+   
+    background: #fae62d;
+  }
+  
+  }
+  
+
+@keyframes move-right-b {
+  0% {
+    top: 79px;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 79px;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.B > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 37px;
+  z-index:1500;
+  
+}
+
+
+.letter.B > .semi-circle :nth-child(4){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 79px;
+  left: 16px;
+  transform: translateX(-25%);
+  z-index:800;
+  animation-play-state:paused; 
+}
+
+
+
+
+.letter.C {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.C > .pillar :nth-child(1){                /* 1. right-left upper pillar */
+  position: absolute;
+
+  top: 79px;
+  right: -11px;
+  background-color: transparent;
+  animation: draw-right-c1 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  z-index:900;
+  
+ 
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-c1 {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.C > .pillar :nth-child(2){                /* 2. left-right under pillar */
+      position: absolute;
+      top: 135px;
+      left: 23px;
+      background-color: transparent;
+      animation: draw-right-c2 0.6s linear ;
+      animation-delay: 1.6s;
+      /* animation-direction:initial; */
+      animation-fill-mode: forwards;
+      z-index:900;
+      animation-play-state:paused; 
+}
+
+@keyframes draw-right-c2 {
+  0% {
+      width: 23px;
+      height: 23px;
+      
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.C > .pillar :nth-child(3){                /* 3. right-left upper ball */
+      position: absolute;
+
+      top: 79px;
+      right: 0px;
+      background-color: #fae62d;
+      animation: move-left-c-upper1 0.6s linear ;
+      animation-delay: 0.4s;
+      animation-fill-mode: forwards;
+      z-index:1900;
+      animation-play-state:paused; 
+}
+
+
+@keyframes move-left-c-upper1 {
+  0% {
+      top: 79px;
+      right: 0px;
+      
+      background-color: #fae62d;
+    }
+
+    99.9% {
+      top: 79px;
+      right: 30px;
+      background-color: #fae62d;
+     
+      
+    }
+    100% {
+      top: 79px;
+      right: 30px;
+      background-color: transparent;
+     
+      
+    }
+}
+
+
+
+@keyframes move-left-c-upper2 {
+  0% {
+      top: 79px;
+      right: 0px;
+      
+      background-color: transparent;
+    }
+
+    0.1% {
+      top: 79px;
+      right: 0px;
+      
+      background-color: #fae62d;
+    } 
+
+    100% {
+      top: 79px;
+      right: 30px;
+      background-color: #fae62d;
+     
+      
+    }
+}
+
+.letter.C > .pillar :nth-child(4){                /* 4. left-right under ball */
+      position: absolute;
+      top: 135px;
+      left: 22px;
+      background-color: transparent;
+      animation: move-right-c-under2 0.6s linear ;
+      animation-delay: 1.6s;
+      /* animation-direction:initial; */
+      animation-fill-mode: forwards;
+      z-index:1800;
+      animation-play-state:paused; 
+}
+
+
+
+@keyframes move-right-c-under2 {
+  0% {
+      
+    top: 135px;
+    left: 12px;
+      background-color: transparent;
+      
+    }
+
+    0.1% {
+      
+      top: 135px;
+      left: 12px;
+        background-color: #fae62d;
+        
+      }
+    
+   
+    100% {
+      top: 135px;
+      left: 60px;
+      
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+.letter.C > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.C > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+
+  animation-name: rotate-vertical-c;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+.letter.C > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 79px;
+  left: 40px;
+
+  animation: move-right-circle-lead-c 0.6s linear ;
+  background-color:transparent;
+  
+  width: 23px;
+  height: 23px;
+  transform-origin: 0px 40px;
+
+  /* overflow: hidden; */
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1.0s;
+  /* animation-direction:initial; */
+  z-index:1850;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes move-right-circle-lead-c {
+  0% {
+
+      transform: rotate( -45deg);
+      background: transparent;
+      
+    }
+
+    0.1% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    } 
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+.letter.C > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 22px;
+  z-index:1500;
+}
+
+
+.letter.C > .semi-circle :nth-child(4){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 79px;
+  left: 48px;
+  transform: translateX(-25%);
+  z-index:700;
+
+}
+
+
+@keyframes rotate-vertical-c {
+
+  0%{
+    transform: rotate(0deg);
+    
+  }
+
+  100%{
+    transform: rotate(-180deg);
+    
+  }
+
+}
+
+
+@keyframes rotate-vertical-lead {
+
+0%{
+  transform: rotate(-20deg);
+ 
+  background: #fae62d;
+}
+
+100%{
+  transform: rotate(260deg);
+ 
+  background: #fae62d;
+}
+
+}
+
+
+
+
+
+.letter.D {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+.letter.D > .pillar :nth-child(1){              /* 1. draw top-down pillar */
+  position: absolute;
+  top:23px;
+  left: 69px;
+
+  animation: draw-down-d 0.6s linear;
+  animation-delay: 0.1s;
+  background-color:transparent;
+  
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-d {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 135px;
+      background-color: #191414;
+    }
+}
+
+.letter.D > .pillar :nth-child(2){                /* 2. draw right-left upper pillar */
+  position: absolute;
+
+  top: 79px;
+  right: -22px;
+  background-color: transparent;
+  animation: draw-right-d-upper 0.6s linear ;
+  animation-delay: 0.4s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-d-upper {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 70.5px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.D > .pillar :nth-child(3){                /* 3. draw left-right under pillar */
+  position: absolute;
+  top: 135px;
+  left: 23px;
+  background-color: transparent;
+  animation: draw-right-d-under 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-d-under {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 68px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.D > .pillar :nth-child(4){              /* 4. move top-down ball */
+  position: absolute;
+  top:23px;
+  left:70px;
+
+  width: 23px;
+  height: 23px;
+  animation: move-down-d11 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-d11 {
+  0% {
+      top:23px;
+      left:70px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top:135px;
+      left:70px;
+      background-color: #fae62d;
+      
+    }
+}
+
+
+.letter.D > .pillar :nth-child(5){                /* 5. move right-left upper pillar */
+  position: absolute;
+
+  top: 79px;
+  right: -23px;
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-left-d-upper 0.6s linear ;
+  animation-delay: 0.4s;
+  
+  animation-fill-mode: backwards;
+  z-index:3900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-left-d-upper {
+  0% {
+      top: 79px;
+      right: -23px;
+      background-color: transparent;
+    }
+
+
+    0.1% {
+      top: 79px;
+      right: -23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 79px;
+      right: 30px;
+      background-color: #fae62d;
+      
+    }
+}
+
+
+
+.letter.D > .pillar :nth-child(6){                /* 6. move left-right under ball */
+  position: absolute;
+  top: 135px;
+  left: -23px;
+  background-color: transparent;
+  animation: move-right-d-under 0.6s linear ;
+  animation-delay: 1.6s;
+  width: 23px;
+  height: 23px;
+  
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-d-under {
+  0% {
+      top: 135px;
+      left: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 135px;
+      left: 71px;
+      background-color: #fae62d;
+      
+    }
+}
+
+
+.letter.D > .semi-circle :nth-child(1){                      /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.D > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0.5px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+
+  animation-name: rotate-vertical-d;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+
+@keyframes rotate-vertical-d {
+
+  0%{
+    transform: rotate(0deg);
+    
+  }
+
+  100%{
+    transform: rotate(-180deg);
+    
+  }
+
+}
+
+.letter.D > .semi-circle :nth-child(2){                           /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 79px;
+  left: 43px;
+
+  
+  animation: move-right-circle-lead-d 0.6s linear ;
+  transform-origin: 0px 40px;
+  background-color: transparent;
+  
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1.0s;
+  z-index:1850;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes move-right-circle-lead-d {
+  0% {
+
+      transform: rotate( -45deg);
+      background: transparent;
+      
+    }
+
+
+    0.1% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+.letter.D > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 23px;
+  z-index:1500;
+}
+
+
+.letter.D > .semi-circle :nth-child(4){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 79px;
+  left: 51px;
+  transform: translateX(-25%);
+  z-index:700;
+
+}
+
+
+@keyframes rotate-vertical-lead {
+
+0%{
+  transform: rotate(-20deg);
+ 
+  background: #fae62d;
+}
+
+100%{
+  transform: rotate(260deg);
+ 
+  background: #fae62d;
+}
+
+}
+
+
+
+
+.letter.E {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.E > .pillar :nth-child(1){                   /* 1. draw right-left upper pillar */
+  position: absolute;
+
+  top: 23px;
+  right: -10.5px;
+  background-color: transparent;
+  animation: draw-right-e-upper1 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-e-upper1 {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.E > .pillar :nth-child(2){                /* 2. draw left-right middle pillar */
+  position: absolute;
+  top: 79px;
+  left: 22px;
+  background-color: transparent;
+  animation: draw-right-e-middle1 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-e-middle1 {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.E > .pillar :nth-child(3){                /* 3. draw right-left under pillar */
+  position: absolute;
+  top: 135px;
+  left: 22px;
+  background-color: transparent;
+  animation: draw-right-e-under1 0.6s linear ;
+  animation-delay: 2.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-e-under1 {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.E > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 24px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.E > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+  
+  animation-name: rotate-vertical-e-upper;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-e-upper {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-180deg);
+  }
+
+}
+
+
+.letter.E > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 24px;
+  left: -1px;
+  
+  /* animation: move-right-e1 0.6s linear ; */
+  background-color:transparent;
+  
+  overflow: hidden;
+  width: 23px;
+    height: 23px;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 0.6s;
+  
+  opacity: 1;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-e1 {
+  0% {
+    top: 24px;
+    left: 81px;
+      
+      background-color: transparent;
+    }
+
+    0.1% {
+      top: 24px;
+      left: 81px;
+       
+        background-color: #fae62d;
+      }
+    
+   
+    100% {
+      top: 24px;
+      left: 0px;
+     
+      background-color: #fae62d;
+    }
+}
+
+.letter.E > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 46px;
+  left: 22px;
+  z-index:1500;
+}
+
+
+.letter.E > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 18px;
+  left: 50px;
+  transform: translateX(-25%);
+  z-index:700;
+
+}
+
+
+
+@keyframes rotate-vertical-lead {
+
+0%{
+  transform: rotate(-20deg);
+ 
+  background: transparent;
+}
+
+0.1%{
+  transform: rotate(-20deg);
+ 
+  background: #fae62d;
+}
+
+100%{
+  transform: rotate(260deg);
+ 
+  background: #fae62d;
+}
+
+}
+
+
+
+.letter.E > .semi-circle :nth-child(5){                /* 0. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 0px;
+  z-index:  699;
+}
+
+
+.letter.E > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 2. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+  
+  animation-name: rotate-vertical-c;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+.letter.E > .semi-circle :nth-child(6){                      /* inner rotate lead ball */
+  position: absolute;
+  
+  top: 23px;
+  left: 38px;
+
+  animation: move-right-circle-lead-e-upper 0.6s linear ;
+  transform-origin: 0px 40px;
+  background-color: transparent;
+  
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1.0s;
+  z-index:1850;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes move-right-circle-lead-e-upper {
+  0% {
+
+      transform: rotate( -45deg);
+      background: transparent;
+      
+    }
+
+    0.1% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+.letter.E > .semi-circle :nth-child(7){                                  /* upper inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 22px;
+  z-index:1500;
+}
+
+
+.letter.E > .semi-circle :nth-child(8){                                  /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 79px;
+  left: 38.5px;
+  z-index:700;
+
+}
+
+
+.letter.E > .semi-circle :nth-child(9){                                  /* 9 under inner rotate lead ball */
+  position: absolute;
+  
+  top: 80px;
+  left: 40px;
+
+  animation: move-circle-lead-e-middle 0.6s linear ;
+  transform-origin: 0px 40px;
+  background-color: transparent;
+
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 2.0s;
+  z-index:1850;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes move-circle-lead-e-middle {
+  0% {
+      transform: rotate( -45deg);
+      background: transparent;
+      
+    }
+
+    0.1% {
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+
+.letter.E > .semi-circle :nth-child(10){                   /* 10. move right-left upper pillar */
+  position: absolute;
+  top: 23px;
+  right: -11.5px;
+
+  width: 23px;
+  height: 23px;
+  animation: move-right-e-upper101 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-e-upper101 {
+  0% {
+    top: 23px;
+    right: -11.5px;
+      background-color: #fae62d;
+    }
+
+    99.9% {
+    top: 23px;
+    right: 24.5px;
+      background-color: #fae62d;
+     
+    }
+    100% {
+      top: 23px;
+    right: 24.5px;
+      background-color: transparent;
+     
+    }
+}
+
+.letter.E > .semi-circle :nth-child(11){                /* 11. move left-right middle pillar */
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-right-e-middle1 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-e-middle1 {
+  0% {
+    top: 79px;
+    left: 23px;
+    background-color: transparent;
+    }
+
+  99.9% {
+    top: 79px;
+    left: 60px;
+    background-color: #fae62d;
+    }
+    
+   
+    100% {
+    top: 79px;
+    left: 60px;
+    background-color: #fae62d;
+     
+    }
+}
+
+.letter.E > .semi-circle :nth-child(12){                /* 12. move right-left under pillar */
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-right-e-under1 0.6s linear ;
+  animation-delay: 2.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-e-under1 {
+
+  0% {
+    top: 135px;
+    left: 23px;
+    background-color: transparent;
+  }
+  0.1% {
+      top: 135px;
+      left: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 135px;
+      left: 60px;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+
+
+
+.letter.F {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.F > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:49.5px;
+  left: 0px;
+
+  animation: draw-down-f 0.6s linear;
+  animation-delay: 1.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-f {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 108.5px;;
+      background-color: #191414;
+    }
+}
+.letter.F > .moving-balls :nth-child(1){   
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+  animation: move-down-f 0.6s linear;
+  animation-delay: 1.1s;
+  background-color: transparent;
+  animation-fill-mode: forwards;
+  z-index:1000;
+  animation-play-state:paused; 
+}  
+
+@keyframes move-down-f {
+  0% {
+    top:23px;
+    left: 0px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      top:23px;
+      left: 0px;
+        background-color: #fae62d;
+      }
+    
+   
+    100% {
+      top:135px;
+      left: 0px;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+.letter.F > .pillar :nth-child(2){                   /* 2. draw right-left upper pillar */
+  position: absolute;
+
+  top: 23px;
+  right: -11.5px;
+  background-color: transparent;
+  animation: draw-right-f-upper 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-f-upper {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent
+    }
+    
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+
+
+
+.letter.F > .moving-balls :nth-child(2) {
+  position: absolute;
+
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-right-f-upper 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: backwards;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-f-upper {
+  0% {
+    top: 23px;
+    right: -23px;
+    background-color: #fae62d;
+    }
+    
+   
+    100% {
+    top: 23px;
+    right: 24.5px;
+    background-color: #fae62d;
+   
+    }
+}
+
+.letter.F > .pillar :nth-child(3){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  top: 79px;
+  left: 23px;
+  background-color: transparent;
+  animation: draw-right-f-upper 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+   
+}
+
+
+.letter.F > .moving-balls :nth-child(3){ 
+  position: absolute;
+
+  background-color: transparent;
+  animation: move-right-f-under 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+} 
+@keyframes move-right-f-under {
+  0% {
+    top: 79px;
+    right: 23px;
+    background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 79px;
+      right: -11.5px;
+    background-color: #fae62d;
+   
+    }
+}
+
+
+.letter.F > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 23px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.F > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+  
+  animation-name: rotate-vertical-f-upper;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-f-upper {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-180deg);
+  }
+
+}
+
+
+.letter.F > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+    
+  top: 23px;
+  left: 40px;
+
+  width: 23px;
+  height: 23px;
+  background-color:transparent;
+  
+  overflow: hidden;
+
+  animation: move-right-circle-lead-f-upper 0.6s linear ;
+  transform-origin: 0px 40px;
+  background-color: transparent;
+  
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  
+  animation-delay: 1.0s;
+
+
+  z-index:1000;
+
+}
+
+@keyframes move-right-circle-lead-f-upper {
+0% {
+
+    transform: rotate( -45deg);
+    background-color: transparent;
+    
+  }
+  0.1% {
+
+    transform: rotate( -45deg);
+    background-color: #fae62d;
+    
+  } 
+  
+  100%{
+    transform: rotate(-180deg);
+   
+    background-color: #fae62d;
+  }
+} 
+
+
+.letter.F > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 46px;
+  left: 22px;
+  z-index:1500;
+}
+
+
+.letter.F > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 23px;
+  left: 39px;
+  z-index:700;
+
+}
+
+
+
+/* 
+@keyframes move-right-circle-lead-f-upper {
+  0% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+ */
+
+
+
+
+
+
+.letter.G {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.G > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:23px;
+  left: 67.5px;
+  
+  animation: draw-down-g 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-g {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 138px;
+      background-color: #191414;
+    }
+}
+
+.letter.G > .moving-balls :nth-child(1){ 
+  position: absolute;
+  top:23px;
+  left: 70.5px;
+  width: 23px;
+  height: 23px;
+  animation: move-down-g 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-down-g {
+  0% {
+      top:23px;
+      left:70.5px;
+      background-color: #fae62d;
+    }
+    
+    99.9% {
+      top:138px;
+      left: 70.5px;
+      
+      background-color: #fae62d;
+    }
+
+    100% {
+      top:138px;
+      left:70.5px;
+      
+      background-color: transparent;
+    }
+}
+
+.letter.G > .pillar :nth-child(2){                   /* 2. draw right-left upper pillar */
+  position: absolute;
+  
+  top: 23px;
+  right: -18.5px;
+  background-color: transparent;
+  animation: draw-right-g-upper 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-g-upper {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color:  transparent;
+    }
+
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color:  #191414;
+    
+    }
+    100% {
+      width: 68px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.G > .moving-balls :nth-child(2){                   /* 2. draw right-left upper pillar */
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  
+  background-color: transparent;
+  animation: move-right-g-upper 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: backwards;
+  z-index:900;
+  animation-play-state:paused;  
+}
+
+@keyframes move-right-g-upper {
+  0% {
+    top: 23px;
+    right: 0px;
+      background-color: transparent;
+    }
+    0.1% {
+      top: 23px;
+      right: 0px;
+        background-color: #fae62d;
+      }
+    
+   
+    100% {
+      top: 23px;
+      right: 26px;
+      
+      background-color: #fae62d;
+    }
+}
+
+.letter.G > .pillar :nth-child(3){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  top: 79px;
+  left: 22px;
+  background-color: transparent;
+  animation: draw-right-g-upper 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+.letter.G > .moving-balls :nth-child(3){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  top: 79px;
+  left: 22px;
+  background-color: transparent;
+  animation: move-right-g-under 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-g-under {
+  0% {
+    top: 79px;
+    left: 22px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      top: 79px;
+      left: 22px;
+        background-color: #fae62d;
+      }
+    
+   
+    100% {
+      top: 79px;
+      left: 68px;
+      
+      background-color: #fae62d;
+    }
+}
+
+
+
+.letter.G > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 23px;
+  left: 0px;
+  z-index:  701;
+}
+
+
+.letter.G > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+  
+  animation-name: rotate-vertical-g-upper;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-g-upper {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-180deg);
+  }
+
+}
+
+
+.letter.G > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  top: 23px;
+  left: 20px;
+  animation: move-right-circle-lead-g-upper1 0.6s linear ;
+  transform-origin: 20px 40px;
+  background-color:transparent;
+  /* overflow: hidden; */
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 1.2s;
+  z-index:12300;
+  animation-play-state:paused; 
+  
+}
+
+
+@keyframes move-right-circle-lead-g-upper1 {
+  0% {
+  
+      transform: rotate( -45deg);
+      background-color: transparent;
+      
+    }
+
+    0.1% {
+  
+      transform: rotate( -45deg);
+      background-color: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background-color: #fae62d;
+    }
+  }
+
+.letter.G > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 46px;
+  left: 22px;
+  z-index:1500;
+}
+
+
+.letter.G > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 22px;
+  left: 52px;
+  transform: translateX(-25%);
+  z-index:701;
+
+}
+
+
+
+
+@keyframes move-right-circle-lead-g-upper {
+  0% {
+
+      transform: rotate( -45deg);
+      background: transparent;
+      
+    }
+
+    0.1% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+} 
+
+
+
+
+.letter.G > .semi-circle :nth-child(5){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 110px;
+  left: 10px;
+  z-index:  700;
+}
+
+
+.letter.G > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: -40px;
+  left: -4px  ;
+  background: #191414;
+  transform-origin: 42px 79px;
+  
+  
+  animation-name: rotate-vertical-g-under1;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-g-under1 {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.G > .semi-circle :nth-child(6){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  top: 135px;
+  left: 70.5px  ;
+  animation: move-right-circle-lead-g-under11 0.6s linear ;
+  transform-origin: -16px 14px;
+  background-color:transparent;
+  overflow: hidden;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 1.2s;
+  z-index:12300;
+  animation-play-state:paused; 
+  
+}
+
+
+
+@keyframes move-right-circle-lead-g-under11 {
+  0% {
+
+      transform: rotate( 90deg);
+      background: transparent;
+      
+    }
+    0.1% {
+
+      transform: rotate( 90deg);
+      background: #fae62d;
+      
+    }
+    
+    100%{
+
+      transform: rotate(180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+/* 
+
+@keyframes move-right-g-ball {
+  0% {
+    top: 69px;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 124px;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+} */
+
+.letter.G > .semi-circle :nth-child(7){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 133px;
+  left: 34.5px;
+  z-index:1500;
+}
+
+
+.letter.G > .semi-circle :nth-child(8){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 96px;
+  left: -10px;
+  z-index:700;
+
+}
+
+
+
+.letter.G > .semi-circle :nth-child(9){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:-10px;
+  left: 11.5px;
+  
+  animation: draw-up-g 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-up-g {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 46px;;
+      background-color: #191414;
+    }
+}
+
+
+.letter.G > .moving-balls :nth-child(4){              /* 9. down-top pillar */
+  position: absolute;
+  
+  width: 23px;
+  height: 23px;
+  animation: move-up-g111 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-up-g111 {
+  0% {
+    bottom:-20px;
+    left: 14px;
+      background-color: transparent;
+    }
+
+    0.1% {
+      bottom:-20px;
+      left: 14px;
+        background-color: #fae62d;
+      }
+    
+   
+    100% {
+      bottom:20px;
+      left: 14px;
+      
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+.letter.H {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box);
+  margin-left:50px;
+  margin-top:25px;
+
+}
+
+
+.letter.H > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:23px;
+  left: -1px;
+  
+  animation: draw-down-h-left111 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-h-left111 {
+  0% {
+
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+
+    0.1% {
+
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 135px;
+      background-color: #191414;
+    }
+}
+
+  .letter.H > .pillar :nth-child(2){                /* 3. right pillar */
+    position: absolute;
+    top: 100px;
+    left: 55.5px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+    
+    animation: draw-down-h-right 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    animation-play-state:paused; 
+  }
+
+
+  @keyframes draw-down-h-right {
+    0% {
+        width: 23px;
+        height: 23px;
+        background-color: #191414;
+       
+      }
+      
+     
+      100% {
+        width: 23px;
+        height: 58px;
+        background-color: #191414;
+       
+      }
+  }
+  
+
+
+
+
+  .letter.H > .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+    position: absolute;
+    background: #1fc582;
+    overflow: hidden;
+    top: 76.5px;
+    left: 0px;
+    z-index:  700;
+  }
+
+  
+  .letter.H > .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+    position: absolute;
+    top: 40px;
+    left: 10px  ;
+    background: #191414;
+    transform-origin: calc(var(--w-box) / 2) 0;
+    
+    
+    animation-name: rotate-square-h-upper;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.58s;
+    z-index:600;
+    animation-play-state:paused; 
+  }
+
+  
+  @keyframes rotate-square-h-upper {
+
+    0%{
+      transform: rotate(0deg);
+    }
+
+    100%{
+      transform: rotate(180deg);
+    }
+
+}
+
+
+  .letter.H > .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+    position: absolute;
+    
+    left: -1px;
+    bottom: -48px;
+    transform-origin: 30px 48px;
+    animation-name: move-rotate-lead-h-1;
+    background-color: transparent;
+    /* overflow: hidden; */
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-delay: 0.55s;
+    z-index:1700;
+    animation-play-state:paused; 
+  }
+
+  @keyframes move-rotate-lead-h-1 {
+
+    0%{
+      transform: rotate(0deg);
+     
+      background: transparent;
+    }
+
+    0.1%{
+      transform: rotate(0deg);
+     
+      background: #fae62d;
+    }
+  
+    100%{
+      transform: rotate(90deg);
+     
+      background: #fae62d;
+    }
+  
+  }
+  
+  .letter.H > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+    position: absolute;
+    background-color: #1fc582;
+    top: 102.5px;
+    left: 22px;
+    z-index:900;
+  }
+
+  
+
+  .letter.H > .semi-circle :nth-child(4){    /* blanket upper */
+    position: absolute;
+    background: #1fc582;
+    top: 116.5px;
+    left: 10px;
+    transform: translateX(-25%);
+    z-index:800;
+
+  }
+
+
+ 
+
+.letter.H > .moving-balls :nth-child(1){                    /* 1-1. left ball */
+  position: absolute;
+  
+  background-color: transparent;
+  animation: move-down-h-1 0.6s linear ;
+  animation-delay: 0.1s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-h-1 {
+0% {
+    left: 0;
+    top: 23px;
+    background-color: #fae62d;
+  }
+
+  0.1% {
+    left: 0;
+    btop: 158px;
+    background-color: #fae62d;
+  }
+  
+
+  100% {
+    left: 0;
+    top: 145px;
+    background-color: #fae62d;
+   
+   
+  }
+}
+
+
+.letter.H > .moving-balls :nth-child(2){                        /* 1-1. right ball */        
+  position: absolute;
+  top: 90px;
+  left: 56px;
+  
+  background-color: transparent;
+  animation: move-down-h 0.6s linear ;
+  animation-delay: 0.9s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1000;
+  animation-play-state:paused; 
+
+}
+@keyframes move-down-h {
+  0% {
+    top: 90px;
+    left: 56px;
+      background-color: #fae62d;
+     
+    }
+    
+   
+    100% {
+      top: 143px;
+      left:56;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+
+
+.letter.I {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box);
+  margin-left:50px;
+  margin-top:25px;
+
+}
+
+
+.letter.I > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:65px;
+  left: -1px;
+  
+  animation: draw-down-i-left 0.6s linear;
+  animation-delay: 0.1s;
+  background-color:  transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-i-left {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color:  transparent;
+    }
+    
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+     
+    100% {
+      width: 23px;
+      height: 95px;;
+      background-color: #191414;
+    }
+}
+
+  .letter.I > .pillar :nth-child(2){                /* 3. right pillar */
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+    
+    animation: draw-dot-i-left 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    animation-play-state:paused; 
+  }
+
+
+  @keyframes draw-dot-i-left {
+    0% {
+        width: 23px;
+        height: 23px;
+        background-color: transparent;
+       
+      }
+
+      0.1% {
+        width: 23px;
+        height: 23px;
+        background-color: #fae62d;
+       
+      }
+      
+     
+      100% {
+        width: 23px;
+        height: 23px;
+        background-color: #191414;
+       
+      }
+  }
+
+
+  .letter.I > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+    position: absolute;
+    
+    width: 23px;
+    height: 23px;
+    animation: move-down-i-down1 0.6s linear;
+    animation-delay: 0.1s;
+    background-color: #fae62d;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:900;
+    animation-play-state:paused; 
+  }
+  
+  
+  @keyframes move-down-i-down1 {
+    0% {
+      top:50px;
+      left: -1px;
+        background-color: #fae62d;
+       
+      }
+      
+     
+      100% {
+        top:143px;
+        left: -1px;
+        background-color: #fae62d;
+       
+      }
+  }
+
+  
+
+.letter.J {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+  animation-play-state:paused; 
+}
+
+
+.letter.J > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:65px;
+  right: -11px;
+  
+  animation: draw-down-j-right 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-j-right {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 95px;;
+      background-color: #191414;
+    }
+}
+
+  .letter.J > .pillar :nth-child(2){                /* 3. right pillar */
+    position: absolute;
+    top: 23px;
+    right: -11px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+    
+    animation: draw-dot-j-right 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    animation-play-state:paused; 
+  }
+
+
+  @keyframes draw-dot-j-right {
+    0% {
+        width: 23px;
+        height: 23px;
+        background-color: #fae62d;
+       
+      }
+      
+     
+      100% {
+        width: 23px;
+        height: 23px;
+        background-color: #191414;
+       
+      }
+  }
+
+
+
+.letter.J > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 107px;
+  left: 0px;
+  z-index:  700;
+  animation-play-state:paused; 
+}
+
+
+.letter.J > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: -39.5px;
+  left: 0px  ;
+  background: #191414;
+  transform-origin: 40px 78.5px;
+  
+  
+  animation-name: rotate-vertical-j-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-j-under {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.J > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  top: 140px;
+  left: 58px  ;
+  animation: move-right-circle-lead-j-under1 0.6s linear ;
+  transform-origin: 40px 20px;
+  background-color:transparent;
+  /* overflow: hidden; */
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.0s;
+  z-index:12300;
+  animation-play-state:paused; 
+  
+}
+
+
+
+@keyframes move-right-circle-lead-j-under1 {
+  0% {
+
+      transform: rotate( 90deg);
+      background: #fae62d;
+      
+    }
+    0.1% {
+
+      transform: rotate( 90deg);
+      background: #fae62d;
+      
+    }
+    
+    100%{
+
+      transform: rotate(180deg);
+     
+      background: transparent;
+    }
+}
+
+.letter.J > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 131px;
+  left: 23px;
+  z-index:1500;
+  animation-play-state:paused; 
+}
+
+
+.letter.J > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 96px;
+  left: 10px;
+  transform: translateX(-25%);
+  z-index:700;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-circle-lead-j-under {
+  0% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+
+.letter.J > .semi-circle :nth-child(5){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:-5px;
+  left: 0px;
+  
+  animation: draw-up-j 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-up-j {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 46px;
+      background-color: #191414;
+    }
+}
+
+
+
+
+.letter.J > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  
+  width: 23px;
+  height: 23px;
+  animation: move-down-j-right1 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: backwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-j-right1 {
+  0% {
+    top:50px;
+    right: -10px;
+      background-color: #fae62d;
+      
+    }
+    
+   
+    100% {
+      top:150px;
+      right: -10px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.J > .moving-balls :nth-child(2){              /* 1. top-down pillar */
+  position: absolute;
+  
+  width: 23px;
+  height: 23px;
+  animation: move-up-j-right1 0.6s linear;
+  animation-delay: 1.6s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:9900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-up-j-right1 {
+  0% {
+    bottom:0px;
+    left: 0px;
+      background-color: #fae62d;
+      
+    }
+    
+   
+    100% {
+      bottom:22px;
+      left: 0px;
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+
+.letter.K {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+
+.letter.K > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:23px;
+  left: -1px;
+  
+  animation: draw-down-k-left 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-k-left {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color:  transparent;
+    }
+    
+    0.1% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    100% {
+      width: 23px;
+      height: 135px;;
+      background-color: #191414;
+    }
+}
+
+.letter.K > .pillar :nth-child(2){                /* 1. right-left upper pillar */
+  position: absolute;
+  
+  top: 79px;
+  right: -11px;
+  background-color:  transparent;
+  animation: draw-right-k 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  z-index:900;
+ 
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-k {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.K > .pillar :nth-child(3){                /* 2. left-right under pillar */
+      position: absolute;
+      top: 135px;
+      left: 22px;
+      background-color: transparent;
+      animation: draw-right-k 0.6s linear ;
+      animation-delay: 1.6s;
+      /* animation-direction:initial; */
+      animation-fill-mode: forwards;
+      z-index:900;
+      animation-play-state:paused; 
+      
+}
+
+.letter.K > .pillar :nth-child(4){                /* 3. right-left upper ball */
+      position: absolute;
+      
+      top: 79px;
+      right: -11.5px;
+      background-color: #fae62d;
+      animation: move-left-k-upper 0.6s linear ;
+      animation-delay: 0.4s;
+      animation-fill-mode: forwards;
+      z-index:1900;
+      animation-play-state:paused; 
+}
+
+
+
+@keyframes move-left-k-upper {
+  0% {
+      top: 79px;
+      right: -11.5px;
+      background-color:  #fae62d;
+    }
+   99.9% {
+    top: 79px;
+    right: 30px;
+      background-color: #fae62d;
+    }
+
+    100% {
+      top: 79px;
+      right: 30px;
+      background-color: transparent;
+     
+      
+    }
+}
+
+.letter.K > .pillar :nth-child(5){                /* 4. left-right under ball */
+      position: absolute;
+      top: 135px;
+      left: 22px;
+      background-color: transparent;
+      animation: move-right-k-under 0.6s linear ;
+      animation-delay: 1.4s;
+      /* animation-direction:initial; */
+      animation-fill-mode: forwards;
+      z-index:1800;
+      animation-play-state:paused; 
+}
+
+
+
+@keyframes move-right-k-under {
+  0% {
+      
+    top: 135px;
+    left: 12px;
+      background-color: #fae62d;
+      
+    }
+    
+   
+    100% {
+      top: 135px;
+      left: 58px;
+      
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+.letter.K > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.K > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+  
+  animation-name: rotate-vertical-k;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+.letter.K > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 79px;
+  left: 40px;
+  
+  animation: move-right-circle-lead-k 0.6s linear ;
+  background-color:transparent;
+  
+  width: 23px;
+  height: 23px;
+  transform-origin: 0px 40px;
+
+  /* overflow: hidden; */
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1.0s;
+  /* animation-direction:initial; */
+  z-index:1850;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes move-right-circle-lead-k {
+  0% {
+
+      transform: rotate( -45deg);
+      background: transparent;
+      
+    }
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+.letter.K > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 22px;
+  z-index:1500;
+}
+
+
+.letter.K > .semi-circle :nth-child(4){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 79px;
+  left: 48px;
+  transform: translateX(-25%);
+  z-index:700;
+  animation-play-state:paused; 
+}
+
+
+@keyframes rotate-vertical-k {
+
+  0%{
+    transform: rotate(0deg);
+    
+  }
+
+  100%{
+    transform: rotate(-180deg);
+    
+  }
+
+}
+
+
+
+.letter.K > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  
+  width: 23px;
+  height: 23px;
+  animation: move-down-k-left1 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-k-left1 {
+  0% {
+    top:0;
+    left: -1px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top:138px;
+      left: -1px;
+     
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+.letter.L {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+
+.letter.L > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:23px;
+  left: -1px;
+  
+  animation: draw-down-l-left 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #191414;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-l-left {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 135px;;
+      background-color: #191414;
+    }
+}
+
+
+
+
+.letter.L > .pillar :nth-child(2){                /* 3. right-left under pillar */
+  position: absolute;
+  top: 135px;
+  left: 0;
+  background-color: transparent;
+  animation: draw-right-l 0.4s linear ;
+  animation-delay: 0.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-l {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 81.5px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+
+
+
+.letter.L > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  
+  animation: move-down-l-left1 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: backwards;
+  z-index:9000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-l-left1 {
+  0% {
+    top:23px;
+    left: -1px;
+  
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top:138px;
+      left: -1px;
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+.letter.L > .moving-balls :nth-child(2){                /* 3. right-left under pillar */
+  position: absolute;
+  
+  background-color: transparent;
+  animation: move-right-l1 0.4s linear ;
+  animation-delay: 0.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index:9000;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-l1 {
+  0% {  
+    top: 135px;
+    left: 0;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 135px;
+      left: 59px;
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+
+.letter.M {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box);
+  margin-left:50px;
+  margin-top:90px;
+
+}
+
+  .letter.M > .pillar :nth-child(1){              /* 1. left pillar */
+    position: absolute;
+    
+    left: -1px;
+    bottom: -25px;
+    background-color: transparent;
+    animation: draw-down-m-left 0.6s linear;
+    animation-delay: 0.1s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:900;
+    animation-play-state:paused; 
+  }
+
+  @keyframes draw-down-m-left {
+    0% {
+        width: 23px;
+        height: 23px;
+        background-color:  transparent;
+      }
+      
+     
+      100% {
+        width: 23px;
+        height: var(--h-incr);
+        background-color: #191414;
+      }
+  }
+  
+ 
+
+  .letter.M > .pillar :nth-child(2){                /* 3. right pillar */
+    position: absolute;
+    top: 37px;
+    left: 55.8px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+    
+    animation: draw-down-m-left 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    animation-play-state:paused; 
+  }
+
+
+  .letter.M > .pillar :nth-child(3){                    /* 1-1. left ball */
+    position: absolute;
+    left: -1px;
+    bottom: -25px;
+    background-color: transparent;
+    animation: move-up-m-left 0.6s linear ;
+    animation-delay: 0s;
+    /* animation-direction:initial; */
+    animation-fill-mode: backwards;
+    z-index:1000;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes move-up-m-left {
+  0% {
+      left: 0;
+      bottom: -50px;
+      background-color: #fae62d;
+    }
+    99.9% {
+      left: 0;
+      bottom: 15px;
+      background-color: #fae62d;
+     
+     
+    }
+
+    100% {
+      left: 0;
+      bottom: 15px;
+      background-color: transparent;
+     
+     
+    }
+}
+
+
+  .letter.M > .pillar :nth-child(4){                        /* 1-1. right ball */        
+    position: absolute;
+    top: var(--p-y-sl-init);
+    left: 57px;
+    
+    background-color: transparent;
+    animation: move-down-m-middle 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:1000;
+    animation-play-state:paused; 
+  }
+  @keyframes move-down-m-middle {
+    0% {
+      top: var(--p-y-sl-init);
+      left: 57px;
+        background-color: #fae62d;
+       
+      }
+      
+     
+      100% {
+        top: 76px;
+        left: 57px;
+        background-color: #fae62d;
+       
+      }
+  }
+
+  .letter.M > .pillar :nth-child(5){                /* 3. right pillar */
+    position: absolute;
+    top: 37px;
+    left: 111.6px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+    
+    animation: draw-down-m-left 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    animation-play-state:paused; 
+  }
+
+  
+  .letter.M > .pillar :nth-child(6){                /* 3. right pillar */
+    position: absolute;
+    top: var(--p-y-sl-init);
+    left: 112px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+    
+    animation: move-down-m-left11 0.6s linear ;
+    animation-delay: 1.8s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    animation-play-state:paused; 
+  }
+
+  @keyframes move-down-m-left11 {
+    0% {
+      top: var(--p-y-sl-init);
+      left: 112px;
+        background-color: #fae62d;
+       
+      }
+      
+     
+      100% {
+        top: 76px;
+        left: 112px;
+        background-color: #fae62d;
+       
+      }
+  }
+ 
+  
+  
+
+
+  .letter.M > .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+    position: absolute;
+    background: #1fc582;
+    overflow: hidden;
+    top: var(--p-y-c-init);
+    left: 0px;
+    z-index:  700;
+  }
+
+  
+  .letter.M > .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+    position: absolute;
+    top: calc( var(--w-box) / 2 );
+    left: 0  ;
+    background: #191414;
+    transform-origin: calc(var(--w-box) / 2) 0;
+    
+    
+    animation-name: semi-circle-rotate-m-left;
+    animation-timing-function: linear;
+    animation-duration: 0.38s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.58s;
+    z-index:600;
+    animation-play-state:paused; 
+  }
+
+
+  
+  @keyframes semi-circle-rotate-m-left {
+
+    0%{
+      transform: rotate(0deg);
+    }
+
+    100%{
+      transform: rotate(180deg);
+    }
+
+}
+
+  .letter.M > .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+    position: absolute;
+    
+    left: 0px;
+    bottom: 0;
+    transform-origin: calc(var(--w-box) / 2 - 0px ) 0;
+    transform: translateX(-50%);
+    animation-name: semi-circle-rotate-m-left-lead;
+    background-color: transparent;
+    overflow: hidden;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-delay: 0.55s;
+    z-index:700;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-rotate-m-left-lead {
+
+  0%{
+    transform: rotate(0deg);
+   
+    background: transparent;
+  }
+
+  0.1%{
+    transform: rotate(0deg);
+   
+    background: #fae62d;
+  }
+
+  100%{
+    transform: rotate(180deg);
+   
+    background: #fae62d;
+  }
+
+}
+
+  .letter.M > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+    position: absolute;
+    background-color: #1fc582;
+    top: calc((var(--h-box) / 2 ) - 3px);
+    left: calc((var(--w-box) / 2 ) - (23px / 1.8));
+    z-index:900;
+  }
+
+
+  .letter.M > .semi-circle :nth-child(4){    /* blanket upper */
+    position: absolute;
+    background: #1fc582;
+    top: -10px;
+    left: 10px;
+    transform: translateX(-25%);
+    z-index:600;
+
+  }
+
+  .letter.M > .semi-circle :nth-child(5){    /* blanket under */
+    position: absolute;
+    background: #1fc582;
+    top: 44px;
+    transform: translateX(-15%);
+    z-index:800;
+  }
+
+
+
+
+
+.letter.M > .semi-circle :nth-child(6){                /* 0. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: var(--p-y-c-init);
+  left: 56px;
+  z-index:  700;
+}
+
+
+.letter.M > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 2. inner rotate square */
+  position: absolute;
+  top: 44px;
+  left: 19px; ;
+  background: #191414;
+  transform-origin: 30px 0;
+  
+  
+  animation-name: semi-circle-rotate-m-right;
+  animation-timing-function: linear;
+  animation-duration: 0.38s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.58s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+@keyframes semi-circle-rotate-m-right {
+
+  0%{
+    transform: rotate(0deg);
+   
+    background: #191414;
+  }
+
+  100%{
+    transform: rotate(180deg);
+   
+    background: #191414;
+  }
+
+}
+
+.letter.M > .semi-circle :nth-child(7){                      /* inner rotate lead ball */
+  position: absolute;
+  
+  left: 48px;
+  bottom: 0;
+  transform-origin: calc(var(--w-box) / 2 - 0px ) 0;
+  transform: translateX(-50%);
+  animation-name: semi-circle-rotate-m-right-lead;
+  background-color: transparent;
+  overflow: hidden;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 1.2s;
+  z-index:700;
+  animation-play-state:paused; 
+}
+
+
+@keyframes semi-circle-rotate-m-right-lead {
+
+  0%{
+    transform: rotate(0deg);
+   
+    background: #fae62d;
+  }
+
+  100%{
+    transform: rotate(180deg);
+   
+    background: #fae62d;
+  }
+
+}
+
+
+.letter.M > .semi-circle :nth-child(8){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 30px;
+  left: 79px;
+  z-index:900;
+}
+
+
+.letter.M > .semi-circle :nth-child(9){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: -10px;
+  left: 55px;
+  z-index:600;
+
+}
+
+.letter.M > .semi-circle :nth-child(10){    /* blanket under */
+  position: absolute;
+  background: #1fc582;
+  top: 44px;
+  left:56px;
+  z-index:800;
+}
+ 
+
+
+
+
+.letter.N {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box);
+  margin-left:50px;
+  margin-top:90px;
+
+
+}
+
+  .letter.N > .pillar :nth-child(1){              /* 1. left pillar */
+    position: absolute;
+    
+    left: -1px;
+    bottom: -25px;
+    background-color: transparent;
+    animation: draw-down-n-left 0.6s linear;
+    animation-delay: 0.1s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:900;
+    animation-play-state:paused; 
+  }
+
+  @keyframes draw-down-n-left {
+    0% {
+        width: 23px;
+        height: 23px;
+        background-color:  transparent;
+      }
+
+      0.1% {
+        width: 23px;
+        height: 23px;
+        background-color:  #191414;
+      }
+      
+     
+      100% {
+        width: 23px;
+        height: var(--h-incr);
+        background-color: #191414;
+      }
+  }
+  
+ 
+
+  .letter.N > .pillar :nth-child(2){                /* 3. right pillar */
+    position: absolute;
+    top: 37px;
+    left: 55px;
+    background-color: transparent;
+    opacity: 1;
+    z-index:900;
+    
+    animation: draw-down-n-left 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    animation-play-state:paused; 
+  }
+
+
+  .letter.N > .pillar :nth-child(3){                    /* 1-1. left ball */
+    position: absolute;
+    left: -1px;
+    bottom: -25px;
+    background-color: #fae62d;
+    animation: move-up-n-left 0.6s linear ;
+    animation-delay: 0s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:1000;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes move-up-n-left {
+  0% {
+      left: 0;
+      bottom: -50px;
+      background-color: #fae62d;
+    }
+    
+    99.9% {
+      left: 0;
+      bottom: 15px;
+      background-color: #fae62d;
+     
+     
+    }
+    100% {
+      left: 0;
+      bottom: 15px;
+      background-color: transparent;
+     
+     
+    }
+}
+
+
+  .letter.N > .pillar :nth-child(4){                        /* 1-1. right ball */        
+    position: absolute;
+    top: var(--p-y-sl-init);
+    left: 56px;
+    
+    background-color: transparent;
+    animation: move-down-n-middle 0.6s linear ;
+    animation-delay: 0.9s;
+    /* animation-direction:initial; */
+    animation-fill-mode: forwards;
+    z-index:1000;
+    animation-play-state:paused; 
+  }
+  @keyframes move-down-n-middle {
+    0% {
+      top: var(--p-y-sl-init);
+      left: 56px;
+        background-color: #fae62d;
+       
+      }
+      
+     
+      100% {
+        top: var(--h-box);
+        left: 55px;
+        background-color: #fae62d;
+       
+      }
+  }
+
+
+
+  .letter.N > .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+    position: absolute;
+    background: #1fc582;
+    overflow: hidden;
+    top: var(--p-y-c-init);
+    left: 0px;
+    z-index:  700;
+  }
+
+  
+  .letter.N > .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+    position: absolute;
+    top: calc( var(--w-box) / 2 );
+    left: 9px  ;
+    background: #191414;
+    transform-origin: calc(var(--w-box) / 2) 0;
+    
+    
+    animation-name: semi-circle-rotate-n-left;
+    animation-timing-function: linear;
+    animation-duration: 0.38s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.58s;
+    z-index:600;
+    animation-play-state:paused; 
+  }
+
+
+  
+  @keyframes semi-circle-rotate-n-left {
+
+    0%{
+      transform: rotate(0deg);
+    }
+
+    100%{
+      transform: rotate(180deg);
+    }
+
+}
+
+  .letter.N > .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+    position: absolute;
+    
+    left: 0px;
+    bottom: -10px;
+    transform-origin: 40px -4px;
+    transform: translateX(-50%);
+    animation-name: semi-circle-rotate-n-left-lead;
+    background-color: transparent;
+    overflow: hidden;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-delay: 0.55s;
+    z-index:700;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-rotate-n-left-lead {
+
+  0%{
+    transform: rotate(0deg);
+   
+    background: #fae62d;
+  }
+
+  100%{
+    transform: rotate(180deg);
+   
+    background: #fae62d;
+  }
+
+}
+
+  .letter.N > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+    position: absolute;
+    background-color: #1fc582;
+    top: calc((var(--h-box) / 2 ) - 3px);
+    left: calc((var(--w-box) / 2 ) - (23px / 1.8));
+    z-index:900;
+  }
+
+
+  .letter.N > .semi-circle :nth-child(4){    /* blanket upper */
+    position: absolute;
+    background: #1fc582;
+    top: -10px;
+    left: 10px;
+    transform: translateX(-25%);
+    z-index:600;
+
+  }
+
+  .letter.N > .semi-circle :nth-child(5){    /* blanket under */
+    position: absolute;
+    background: #1fc582;
+    top: 44px;
+    transform: translateX(-15%);
+    z-index:800;
+  }
+
+
+  
+
+
+.letter.O {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box);
+  margin-left:50px;
+  margin-top:25px;
+
+
+}
+
+
+  .letter.O > .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+    position: absolute;
+    background: #1fc582;
+    overflow: hidden;
+    top: 44px;
+    left: 0px;
+    z-index:  700;
+  }
+
+  
+  .letter.O > .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+    position: absolute;
+    top: calc( var(--w-box) / 2 );
+    left: 9px  ;
+    background: transparent;
+    transform-origin: calc(var(--w-box) / 2) 0;
+    
+    
+    animation-name: semi-circle-O-rotate-upper;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+    z-index:600;
+    animation-play-state:paused; 
+  }
+
+
+  
+  @keyframes semi-circle-O-rotate-upper {
+
+    0%{
+      transform: rotate(0deg);
+      background: #191414;
+    }
+
+    100%{
+      transform: rotate(180deg);
+      background: #191414;
+    }
+
+}
+
+
+
+  
+.letter.O > .semi-circle > .semi-circle-inner :nth-child(2){   /* 2. inner rotate square */
+  position: absolute;
+  top: -34px;
+  left: 9px  ;
+  background: transparent;
+  transform-origin: 35px 69px;
+  
+
+  animation-name: semi-circle-O-rotate-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes semi-circle-O-rotate-under {
+
+  0%{
+    transform: rotate(0deg);
+    background: transparent;
+  }
+  1%{
+    transform: rotate(0deg);
+    background: #191414;
+  }
+
+  100%{
+    transform: rotate(180deg);
+    background: #191414;
+  }
+
+}
+
+  .letter.O > .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+    position: absolute;
+    
+    left: 0px;
+    bottom: -43px;
+    transform-origin: calc(var(--w-box) / 2 - 0px ) 0;
+    transform: translateX(-50%);
+    animation-name: semi-circle-O-upper-lead;
+    background-color: #fae62d;
+    overflow: hidden;
+    animation-timing-function: linear;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+    z-index:1000;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-O-upper-lead {
+
+  0%{
+    transform: rotate(40deg);
+   
+    background: #fae62d;
+  }
+
+  100%{
+    transform: rotate(400deg);
+   
+    background: #fae62d;
+  }
+
+}
+
+  .letter.O > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+    position: absolute;
+    background-color:#1fc582;
+    top: 67px;
+    left: 23px;
+    z-index:900;
+  }
+
+
+  .letter.O > .semi-circle :nth-child(4){    /* blanket under */
+    position: absolute;
+    background: #1fc582;
+    
+
+    top: 79px;
+    left: -15px;
+    z-index:900;
+    animation-name: semi-circle-o-blanket-under;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.0s;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-o-blanket-under {
+
+  0%{
+    background: #1fc582;
+  }
+  99%{
+    background: #1fc582;
+  }
+  100%{
+    background: transparent
+  }
+
+}
+
+.letter.O > .semi-circle :nth-child(5){     /* blanket upper */
+    position: absolute;
+    background: #1fc582;
+    
+    top: 79px;
+    left: -15px;
+    z-index:900;
+    animation-name: semi-circle-o-blanket-upper;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay:0.6s;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-o-blanket-upper {
+
+  0%{
+    background: #1fc582;
+  }
+  99%{
+    background: #1fc582;
+  }
+  100%{
+    background: transparent;
+  }
+
+}
+
+
+
+
+
+
+.letter.P{
+  position: relative;
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+.letter.P> .pillar :nth-child(1){                /* 1. top-down pillar */
+  position: absolute;
+  top:44px;
+  left: -1px;
+  
+  animation: draw-down-p 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-p {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 135px;;
+      background-color: #191414;
+    }
+}
+
+.letter.P> .pillar :nth-child(2){                /* 2. left-right upper pillar */
+  position: absolute;
+  top: 44px;
+  left: 0px;
+  background-color: transparent;
+  animation: draw-right-p 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-p {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+    
+   
+    100% {
+      width: 68px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.P> .pillar :nth-child(3){                /* 3. right-left under pillar */
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  background-color: transparent;
+  animation: draw-right-p 0.4s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+.letter.P> .pillar :nth-child(4){                    /* 1-1. top-down  ball */
+  position: absolute;
+  bottom:91px;
+  left: -1px;
+  width: 23px;
+  height: 23px;
+  background-color: #fae62d;
+  animation: move-down-p 0.6s linear ;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  z-index:2000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-p {
+  0% {
+      
+    bottom:91px;
+    left: -1px;
+    background-color: #fae62d;
+      
+
+    }
+   1% {
+      
+      bottom:91px;
+      left: -1px;
+      background-color: #fae62d;
+      
+  
+      }
+    
+   
+    100% {
+      bottom:-21px;
+      left: -1px;
+      
+      background-color: #fae62d;
+      
+
+    }
+}
+
+
+
+.letter.P> .pillar :nth-child(5){                /* 2. left-right upper ball */
+  position: absolute;
+  top: 44px;
+  left: -1px;
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-right-p-upper 0.6s linear ;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-p-upper {
+  0% {
+    top: 44px;
+    left: -1px;
+      background-color: transparent;
+    }
+    
+   
+  100% {
+    top: 44px;
+  
+  left: 36px;
+     background-color: #fae62d;
+    
+  }
+}
+
+.letter.P> .pillar :nth-child(6){                /* 3. right-left under ball */
+  position: absolute;
+  top: 100px;
+  right: 12px;
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-left-p-under 0.5s linear ;
+  animation-delay: 1.4s;
+  animation-fill-mode: backwards;
+  z-index:2300;
+  animation-play-state:paused; 
+}
+
+@keyframes move-left-p-under {
+  0% {
+    top: 100px;
+  right: 12px;
+      background-color: transparent;
+    }
+    
+   
+  100% {
+    top: 100px;
+  right: 48px;
+     background-color: #fae62d;
+    
+  }
+}
+
+.letter.P> .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 44px;
+  left: 10px;
+  z-index:  700;
+}
+
+
+.letter.P> .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: -36px  ;
+  background: #191414;
+  transform-origin: 80px 39px;
+  
+  
+  animation-name: rotate-vertical-p;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-p {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.P> .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+  position: absolute;
+  
+  top: 44px;
+  left:34px;
+  /*  */
+  /* transform: translateX(-50%); */
+  
+  animation: rotate-vertical-lead-p 0.6s linear ;
+  background-color:transparent;
+  transform-origin: 18px 40px;
+
+  /* overflow: hidden; */
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1.1s;
+  /* animation-direction:initial; */
+  z-index:850;
+  animation-play-state:paused; 
+}
+
+
+@keyframes rotate-vertical-lead-p {
+
+  0%{
+    transform: rotate( 0deg);
+    background: transparent;
+  }
+  
+  100%{
+    transform: rotate(180deg);
+   
+    background: #fae62d;
+  }
+  
+  }
+  
+
+@keyframes move-right-p {
+  0% {
+    top: 0;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 0;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.P> .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 67px;
+  left: 36px;
+  z-index:1500;
+}
+
+
+.letter.P> .semi-circle :nth-child(4){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 44px;
+  left: 0px;
+  z-index:800;
+}
+
+
+
+
+.letter.Q {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box);
+  margin-left:50px;
+  margin-top:25px;
+
+
+}
+
+
+  .letter.Q > .semi-circle :nth-child(1){                /* 0. outer  semi-circle */
+    position: absolute;
+    background: #1fc582;
+    overflow: hidden;
+    top: 44px;
+    left: 0px;
+    z-index:  700;
+  }
+
+  
+  .letter.Q > .semi-circle > .semi-circle-inner :nth-child(1){   /* 2. inner rotate square */
+    position: absolute;
+    top: calc( var(--w-box) / 2 );
+    left: 9px  ;
+    background: transparent;
+    transform-origin: calc(var(--w-box) / 2) 0;
+    
+    
+    animation-name: semi-circle-Q-rotate-upper;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+    z-index:600;
+    animation-play-state:paused; 
+  }
+
+
+  
+  @keyframes semi-circle-Q-rotate-upper {
+
+    0%{
+      transform: rotate(0deg);
+      background: #191414;
+    }
+
+    100%{
+      transform: rotate(180deg);
+      background: #191414;
+    }
+
+}
+
+
+
+  
+.letter.Q > .semi-circle > .semi-circle-inner :nth-child(2){   /* 2. inner rotate square */
+  position: absolute;
+  top: -34px;
+  left: 9px  ;
+  background: transparent;
+  transform-origin: 35px 69px;
+  
+
+  animation-name: semi-circle-Q-rotate-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes semi-circle-Q-rotate-under {
+
+  0%{
+    transform: rotate(0deg);
+    background: transparent;
+  }
+  1%{
+    transform: rotate(0deg);
+    background: #191414;
+  }
+
+  100%{
+    transform: rotate(180deg);
+    background: #191414;
+  }
+
+}
+
+  .letter.Q > .semi-circle :nth-child(2){                      /* inner rotate lead ball */
+    position: absolute;
+    
+    left: 0px;
+    bottom: -42px;
+    transform-origin: calc(var(--w-box) / 2 - 0px ) 0;
+    transform: translateX(-50%);
+    animation-name: semi-circle-Q-upper-lead;
+    background-color: #fae62d;
+    overflow: hidden;
+    animation-timing-function: linear;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+    z-index:1000;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-Q-upper-lead {
+
+  0%{
+    transform: rotate(40deg);
+   
+    background: #fae62d;
+  }
+
+  100%{
+    transform: rotate(400deg);
+   
+    background: #fae62d;
+  }
+
+}
+
+  .letter.Q > .semi-circle :nth-child(3){                /* inner center #fae62d ball */
+    position: absolute;
+    background-color:#1fc582;
+    top: 67px;
+    left: 23px;
+    z-index:900;
+  }
+
+
+  .letter.Q > .semi-circle :nth-child(4){    /* blanket under */
+    position: absolute;
+    background: #1fc582;
+    
+
+    top: 79px;
+    left: -15px;
+    z-index:900;
+    animation-name: semi-circle-q-blanket-under;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.0s;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-q-blanket-under {
+
+  0%{
+    background: #1fc582;
+  }
+  99%{
+    background: #1fc582;
+  }
+  100%{
+    background: transparent
+  }
+
+}
+
+.letter.Q > .semi-circle :nth-child(5){     /* blanket upper */
+    position: absolute;
+    background: #1fc582;
+    
+    top: 79px;
+    left: -15px;
+    z-index:900;
+    animation-name: semi-circle-q-blanket-upper;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay:0.6s;
+    animation-play-state:paused; 
+  }
+
+  
+@keyframes semi-circle-q-blanket-upper {
+
+  0%{
+    background: #1fc582;
+  }
+  99%{
+    background: #1fc582;
+  }
+  100%{
+    background: transparent;
+  }
+
+}
+
+.letter.Q> .semi-circle :nth-child(6){                /* 2. left-right upper pillar */
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  background-color: transparent;
+  animation: draw-right-diagonal-q 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  transform: rotate(45deg);
+  border-radius: 100px;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-diagonal-q {
+  0% {
+      width: 23px;
+      height: 23px;
+      top: 90px;
+      left: 40px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 40px;
+      height: 23px;
+      top: 105px;
+      left: 45px;
+      background-color: #191414;
+    }
+}
+
+
+.letter.Q> .semi-circle :nth-child(7){                /* 2. left-right upper pillar */
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  top: 90px;
+  left: 40px;
+  background-color: transparent;
+  animation: move-right-diagonal-q 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  transform: rotate(45deg);
+  border-radius: 100px;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-diagonal-q {
+  0% {
+      
+      top: 90px;
+      left: 40px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+     
+      top: 114px;
+      left: 62px;
+      background-color: #fae62d;
+      
+    }
+}
+
+
+
+
+
+
+
+.letter.R {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.R > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:44px;
+  left: -1px;
+  
+  animation: draw-down-r 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-r {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 79px;;
+      background-color: #191414;
+    }
+}
+
+.letter.R > .pillar :nth-child(2){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  top: 56px;
+  left: 12px;
+  background-color: transparent;
+  animation: draw-right-r-upper 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes draw-right-r-upper {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 53px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.R > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:44px;
+    left: -1px;
+  width: 23px;
+  height: 23px;
+  animation: move-down-r 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-r {
+  0% {
+    top:44px;
+    left: -1px;
+      background-color: #fae62d;
+    }
+    
+    99.9% {
+      top:112px;
+      left: -1px;
+      background-color: #fae62d;
+      
+    }
+    100% {
+      top:112px;
+      left: -1px;
+      background-color: #fae62d;
+      
+    }
+}
+
+.letter.R > .moving-balls :nth-child(2){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  
+  width: 23px;
+    height: 23px;
+  background-color: transparent;
+  animation: move-right-r-upper 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes move-right-r-upper {
+  0% {
+    top: 56px;
+    left: 12px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 56px;
+      left: 43px;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+
+
+
+.letter.T {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.T > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:24px;
+  left: -1px;
+  
+  animation: draw-down-t 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-t {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 135px;;
+      background-color: #191414;
+    }
+}
+
+.letter.T > .pillar :nth-child(2){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  top: 56px;
+  left: 12px;
+  background-color: transparent;
+  animation: draw-right-t-upper 0.6s linear ;
+  animation-delay: 0.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-right-t-upper {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+
+
+
+.letter.T > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  
+  
+  animation: move-down-t 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-t {
+  0% {
+    top:24px;
+    left: -1px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top:142px;
+    left: -1px;
+      background-color: #fae62d;
+      
+    }
+}
+
+.letter.T > .moving-balls :nth-child(2){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  
+  background-color: transparent;
+  animation: move-right-t-upper 0.6s linear ;
+  animation-delay: 0.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-t-upper {
+  0% {
+    top: 56px;
+    left: 12px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 56px;
+      left: 54px;
+      background-color: #fae62d;
+      
+    }
+}
+
+
+
+
+
+
+.letter.S {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.S > .pillar :nth-child(1){                   /* 2. draw right-left upper pillar */
+  position: absolute;
+  
+  top: 23px;
+  right: -11.5px;
+  background-color: transparent;
+  animation: draw-right-s-upper 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-s-upper {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.S > .moving-balls :nth-child(1){                   /* 2. draw right-left upper pillar */
+  position: absolute;
+  background-color: #fae62d;
+  animation: move-right-s-upper1 0.6s linear ;
+  animation-delay: 0.0s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-s-upper1 {
+  0% {
+    top: 23px;
+    right: 0px;
+      background-color:#fae62d;
+    }
+    
+    99.9% {
+      top: 23px;
+      right: 29px;
+      background-color: #fae62d;
+    }
+    100% {
+      top: 23px;
+      right: 29px;
+      background-color: transparent;
+    }
+}
+
+
+
+
+.letter.S > .pillar :nth-child(2){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  top: 79px;
+  left: 22px;
+  background-color: transparent;
+  animation: draw-right-s-upper 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+
+
+
+.letter.S > .moving-balls :nth-child(2){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  
+  background-color: transparent;
+  animation: move-right-s-upper2 0.6s linear ;
+  animation-delay: 1.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: backwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-s-upper2 {
+  0% {
+    top: 79px;
+    left: 22px;
+      background-color: transparent;
+    }
+    
+   
+    100% {
+      top: 79px;
+  left: 51px;
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+
+
+.letter.S > .pillar :nth-child(3){                /* 3. right-left under pillar */
+  position: absolute;
+  top: 135px;
+  right: 12px;
+  background-color: transparent;
+  animation: draw-right-s 0.4s linear ;
+  animation-delay: 1.5s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+
+
+.letter.S > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 23px;
+  left: 0px;
+  z-index:  900;
+}
+
+
+.letter.S > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 39px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+  
+  animation-name: rotate-vertical-s-upper2222;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-s-upper2222 {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-180deg);
+  }
+
+}
+
+
+.letter.S > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 23px;
+  left: 39px  ;
+  background: transparent;
+  transform-origin: 0px 39px;
+  
+   
+  animation-name: move-rotate-vertical-s-upper-lead-ball;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 1s;
+  z-index:3600;
+  animation-play-state:paused; 
+}
+
+@keyframes move-rotate-vertical-s-upper-lead-ball {
+
+  0%{
+    transform: rotate(0deg);
+    background: transparent;
+  }
+
+  100%{
+    transform: rotate(-180deg);
+    background: #fae62d;
+  }
+
+}
+
+.letter.S > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 46px;
+  left: 22px;
+  z-index:1500;
+}
+
+
+.letter.S > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 23px;
+  left: 50px;
+  transform: translateX(-25%);
+  z-index:950;
+  animation-play-state:paused; 
+}
+
+
+
+
+@keyframes move-right-circle-lead-s-upper {
+  0% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+
+
+.letter.S > .semi-circle :nth-child(5){                /* 0. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 23px;
+  z-index:  960;
+}
+
+
+.letter.S > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 2. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: -38px  ;
+  background: #191414;
+  transform-origin: 79px 39px;
+  
+
+  animation-name: rotate-vertical-s-under11111;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-s-under11111 {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.S > .semi-circle :nth-child(6){                      /* inner rotate lead ball */
+  position: absolute;
+  
+  top: 123px;
+  left: 30px  ;
+  background: transparent;
+  transform-origin:  40px 40px;
+  
+
+  animation-name: move-rotate-vertical-s-under-lead-ball1;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 2.5s;
+  z-index:3600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes move-rotate-vertical-s-under-lead-ball1 {
+
+  0%{
+    transform: rotate(0deg);
+    background: transparent;
+  }
+
+  100%{
+    transform: rotate(-180deg);
+    background: #fae62d;
+  }
+
+}
+
+@keyframes rotate-vertical-lead-s {
+
+  0%{
+    transform: rotate( 0deg);
+    background: #fae62d;
+  }
+  
+  100%{
+    transform: rotate(180deg);
+   
+    background: #fae62d;
+  }
+  
+  }
+  
+
+@keyframes move-right-s {
+  0% {
+    top: 79px;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 79px;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.S > .semi-circle :nth-child(7){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 48px;
+  z-index:1500;
+}
+
+
+.letter.S > .semi-circle :nth-child(8){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 79PX;
+  left: 28px;
+  transform: translateX(-25%);
+  z-index:970;
+  animation: flip-vertical-s 0.1s linear ;
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  animation-delay: 1.7s;
+  animation-play-state:paused; 
+}
+
+
+@keyframes flip-vertical-s {
+  0% {
+      top: 79px;
+      left: 28px;
+      }
+  50% {
+    top: 100.5px;
+    left: 28px;
+    }
+
+   
+    100% {
+      top: 102px;
+      left: 28px;
+    }
+}
+
+
+.letter.S > .semi-circle :nth-child(9){                   /* 9. draw right-left upper pillar */
+  position: absolute;
+  
+  top: 135px;
+  right: -11.5px;
+  background-color: transparent;
+  animation: draw-left-s-bottom 0.6s linear ;
+  animation-delay: 3.20s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-left-s-bottom {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+
+.letter.S > .moving-balls :nth-child(3){                   /* 9. draw right-left upper pillar */
+  position: absolute;
+
+  
+  background-color: transparent;
+  animation: move-left-s-bottom3 0.6s linear ;
+  animation-delay: 3.20s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+   
+}
+
+@keyframes move-left-s-bottom3 {
+  0% {
+    top: 136px;
+    right: -11.5px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 136px;
+      right: 28px;
+      background-color: #fae62d;
+      
+    }
+}
+
+
+
+.letter.U {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.U > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top: 46px;
+    right: -8.8px;
+  
+  animation: draw-down-u-right 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-u-right {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.U > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  
+  top:38px;
+    right: -11.5px;
+  animation: move-down-u-right1 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-u-right1 {
+  0% {
+    top:38px;
+    right: -11.5px;
+      background-color: #fae62d;
+    }
+    
+    99.9% {
+      top:73px;
+    right: -11.5px;
+      background-color: #fae62d;
+    }
+    100% {
+      top:73px;
+    right: -11.5px;
+      background-color: transparent;
+    }
+}
+
+
+.letter.U > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 49px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.U > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: -34px;
+  left: 0px  ;
+  background: #191414;
+  transform-origin: 40px 78px;
+  
+   
+  animation-name: rotate-vertical-u-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-u-under {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.U > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 70px;
+  right: -10px;
+  
+  animation: move-right-circle-lead-u-under 0.6s linear ;
+  background-color:transparent;
+  transform-origin: -18px 20px;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1s;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-circle-lead-u-under {
+  0% {
+
+      transform: rotate( 0deg);
+      background: transparent;
+      
+    }
+  0.1% {
+
+      transform: rotate( 0deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+.letter.U > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 72px;
+  left: 23px;
+  z-index:1500;
+}
+
+
+.letter.U > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 38px;
+  left: 10px;
+  transform: translateX(-25%);
+  z-index:700;
+  animation-play-state:paused; 
+}
+
+
+
+
+.letter.U > .semi-circle :nth-child(5){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:54px;
+  left: 0px;
+  
+  animation: draw-up-u 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-up-u {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;;
+      background-color: #191414;
+    }
+}
+
+
+.letter.U > .moving-balls :nth-child(2){              /* 9. down-top pillar */
+  position: absolute;
+  
+  
+  animation: move-up-u1 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-up-u1 {
+  0% {
+    bottom:20px;
+    left: 0px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      bottom:88px;
+      left: 0px;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+.letter.V {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.V > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+top: 71px;
+right: -8.5px;
+  
+  animation: draw-down-v-right 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-v-right {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.V > .pillar :nth-child(2){              /* 1. top-down pillar */
+  position: absolute;
+  top:127px;
+  right: 20px;
+  
+  animation: draw-down-v-middle 0.6s linear;
+  animation-delay: 2.3s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-v-middle {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 60px;;
+      background-color: #191414;
+    }
+}
+
+
+.letter.V > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:48px;
+  right: -10px;
+  
+  animation: move-down-v-right1111 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-v-right1111 {
+  0% {
+    top:44px;
+    right: -10px;
+      background-color: #fae62d;
+    }
+    
+    99.9% {
+      top:117px;
+  right: -10px;
+      background-color: #fae62d;
+    }
+    100% {
+      top:117px;
+  right: -10px;
+      background-color: transparent;
+    }
+}
+
+
+
+.letter.V > .moving-balls :nth-child(2){              /* 1. top-down pillar */
+  position: absolute;
+  top:79px;
+  left: 0px;
+  
+  animation: move-down-v-middle4444 0.6s linear;
+  animation-delay: 2.3s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:9900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-v-middle4444 {
+  0% {
+    top:127px;
+    left: 0px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top:72px;
+      left: 0px;
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+.letter.V > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.V > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: -40px;
+  left: 0px  ;
+  background: #191414;
+  transform-origin: 40px 80px;
+  
+   
+  animation-name: rotate-vertical-v-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-v-under {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.V > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 114px;
+  right: -10px;
+  
+  animation: move-right-circle-lead-v-under1 0.6s linear ;
+  background-color:transparent;
+  transform-origin: -18px 10px;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1s;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-circle-lead-v-under1 {
+  0% {
+
+      transform: rotate( 0deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+@keyframes move-right-v-ball {
+  0% {
+    top: 29px;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 124px;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.V > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 100px;
+  left: 23px;
+  z-index:1500;
+}
+
+
+.letter.V > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 62px;
+  left: 10px;
+  transform: translateX(-25%);
+  z-index:700;
+  
+}
+
+
+@keyframes move-right-circle-lead-v-under {
+  0% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+
+.letter.V > .semi-circle :nth-child(5){              /* 9. down-top pillar */
+  position: absolute;
+  bottom: 28px;
+  left: 0px;
+  
+  animation: draw-up-v 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-up-v {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;;
+      background-color: #191414;
+    }
+}
+
+
+.letter.V > .moving-balls :nth-child(3){              /* 9. down-top pillar */
+  position: absolute;
+
+  
+  animation: move-up-v1 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-up-v1 {
+  0% {
+    top:134px;
+    left: 27px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top:164px;
+      left: 27px;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+
+
+.letter.W {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.W > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top: 69.5px;
+  right: -65.5px;
+  
+  animation: draw-down-w-right 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-w-right {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.W > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:57px;
+    right:-65.5px;
+  
+  animation: move-down-w-right 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-w-right {
+  0% {
+    top:57px;
+    right: -65.5px;
+      background-color: #fae62d;
+    }
+    
+       
+    99.9% {
+      top:117px;
+  right: -65.5px;
+      background-color: #fae62d;
+    }
+
+   
+    100% {
+      top:117px;
+  right: -65.5px;
+      background-color: transparent;
+    }
+}
+
+
+
+.letter.W > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.W > .semi-circle > .semi-circle-inner1 :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: -39.5px;
+  left: 0px  ;
+  background: #191414;
+  transform-origin: 39.5px 78px;
+  
+  
+  animation-name: rotate-vertical-w-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-w-under {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.W > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  top: 90px;
+  right: -10px;
+  
+  animation: move-right-circle-lead-w-under2 0.6s linear ;
+  background-color:transparent;
+  transform-origin: -18px 10px;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1s;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-circle-lead-w-under2 {
+  0% {
+
+      transform: rotate( 0deg);
+      background: transparent;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(180deg);
+     
+      background: #fae62d;
+    }
+}
+
+.letter.W > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 23px;
+  z-index:1500;
+}
+
+
+.letter.W > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 62.5px;
+  left: 10px;
+  transform: translateX(-25%);
+  z-index:700;
+
+}
+
+
+@keyframes move-right-circle-lead-w-under {
+  0% {
+
+      transform: rotate( -45deg);
+      background: transparent;
+      
+    }
+    
+    0.1% {
+
+      transform: rotate( -45deg);
+      background: t#fae62d;
+      
+    }
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+
+.letter.W > .semi-circle :nth-child(5){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:30.5px;
+  left: 0px;
+  
+  animation: draw-up-w 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-up-w {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;;
+      background-color: #191414;
+    }
+}
+
+
+.letter.W > .moving-balls :nth-child(2){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:30.5px;
+  left: 56px;
+  
+  animation: move-up-w 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-up-w {
+  0% {
+    bottom:30.5px;
+    left: 56px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+    bottom:68px;
+    left: 56px;
+    background-color: #fae62d;
+      
+    }
+}
+
+
+
+.letter.W > .semi-circle :nth-child(6){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 56px;
+  z-index:  700;
+}
+
+
+.letter.W > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: -39.5px;
+  left: 0px  ;
+  background: #191414;
+  transform-origin: 39.5px 78px;
+  
+  
+  animation-name: rotate-vertical-w-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-w-under {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.W > .semi-circle :nth-child(7){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  
+  top: 110px;
+  right: 50px;
+  
+  animation: move-right-circle-lead-w-under1 0.6s linear ;
+  background-color:transparent;
+  transform-origin: -18px 10px;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 1s;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-circle-lead-w-under1 {
+  0% {
+
+      transform: rotate( 0deg);
+      background: transparent;
+      
+    }
+    0.1% {
+
+      transform: rotate( 0deg);
+      background: #fae62d;
+      
+    }
+    
+    100%{
+      transform: rotate(180deg);
+     
+      background: #fae62d;
+    }
+}
+
+.letter.W > .semi-circle :nth-child(8){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 79px;
+  z-index:1500;
+}
+
+
+.letter.W > .semi-circle :nth-child(9){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 62.5px;
+  left: 79px;
+  transform: translateX(-25%);
+  z-index:700;
+  animation-play-state:paused; 
+
+}
+
+
+@keyframes move-right-circle-lead-w-under {
+  0% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+     99.9%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+
+    100%{
+      transform: rotate(-180deg);
+     
+      background: transparent;
+    }
+}
+
+
+
+.letter.W > .semi-circle :nth-child(10){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:30.5px;
+  left: 56px;
+  
+  animation: draw-up-w 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-up-w {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 58px;;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.W > .moving-balls :nth-child(3){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:10px;
+  left: 0px;
+  
+  animation: move-up-w2 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-up-w2 {
+  0% {
+    bottom:10px;
+    left: 0px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      bottom:66px;
+      left: 0px;
+      background-color: #fae62d;
+    }
+}
+
+
+
+
+
+
+
+
+.letter.X {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+
+.letter.X> .pillar :nth-child(1){                /* 2. left-right upper pillar */
+  position: absolute;
+  
+  background-color: transparent;
+  animation: draw-left-diagonal-x 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  transform: rotate(45deg);
+  border-radius: 100px;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-left-diagonal-x {
+  0% {
+      width: 23px;
+      height: 23px;
+      top: 79px;
+      left: -14px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 118px;
+      height: 23px;
+      top: 102px;
+      left: -14px;
+      background-color: #191414;
+    }
+}
+
+
+
+.letter.X> .pillar :nth-child(2){                /* 2. left-right upper pillar */
+  position: absolute;
+  
+  background-color: transparent;
+  animation: draw-right-diagonal-x 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  transform: rotate(135deg);
+  border-radius: 100px;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-diagonal-x {
+  0% {
+      width: 23px;
+      height: 23px;
+      top: 79px;
+      right: -36px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 118px;
+      height: 23px;
+      top: 102px;
+      right: -36px;
+      background-color: #191414;
+    }
+}
+
+
+
+
+.letter.X> .moving-balls :nth-child(1){                /* 2. left-right upper pillar */
+  position: absolute;
+  
+  background-color: #fae62d;
+  animation: move-left-diagonal-x 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  transform: rotate(45deg);
+  border-radius: 100px;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-left-diagonal-x {
+  0% {
+      
+      top: 65px;
+      left: 00px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+     
+      top: 138px;
+      left: 70px;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+.letter.X> .moving-balls :nth-child(2){                /* 2. left-right upper pillar */
+  position: absolute;
+  
+  background-color: #fae62d;
+  animation: move-right-diagonal-x 0.6s linear ;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  transform: rotate(135deg);
+  border-radius: 100px;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-diagonal-x {
+  0% {
+      
+      top: 65px;
+      right: 0px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      
+      top: 138px;
+      right: 45px;
+      background-color: #fae62d;
+     
+    }
+}
+
+
+
+
+
+.letter.Y {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.Y > .pillar :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  top:68px;
+  right: -8.5px;
+  
+  animation: draw-down-y-right 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-down-y-right {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 135px;;
+      background-color: #191414;
+    }
+}
+
+
+.letter.Y > .moving-balls :nth-child(1){              /* 1. top-down pillar */
+  position: absolute;
+  
+
+  animation: move-down-y-right 0.6s linear;
+  animation-delay: 0.1s;
+  background-color: #fae62d;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-down-y-right {
+  0% {
+    top:47px;
+    right: -10px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top:188px;
+      right: -10px;
+      background-color: #fae62d;
+      
+    }
+    
+}
+
+
+
+.letter.Y > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 0px;
+  z-index:  700;
+}
+
+
+.letter.Y > .semi-circle > .semi-circle-inner2 :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: -39.5px;
+  left: 0px  ;
+  background: #191414;
+  transform-origin: 39.5px 77px;
+  
+   
+  animation-name: rotate-vertical-y-under;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-y-under {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.Y > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 93px;
+  left: -1px;
+  
+  animation: move-right-y-ball 0.6s linear ;
+  background-color:transparent;
+  
+  overflow: hidden;
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 0.6s;
+   
+  opacity: 1;
+  z-index:1000;
+  animation-play-state:paused; 
+}
+
+
+@keyframes move-right-y-ball {
+  0% {
+    top: 93px;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 124px;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.Y > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 23px;
+  z-index:1500;
+}
+
+
+.letter.Y > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 64px;
+  left: 23px;
+  transform: translateX(-25%);
+  z-index:700;
+
+}
+
+
+@keyframes move-right-circle-lead-y-under {
+  0% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+
+.letter.Y > .semi-circle :nth-child(5){              /* 9. down-top pillar */
+  position: absolute;
+  bottom:20.5px;
+  left: 0px;
+  
+  animation: draw-up-y 0.6s linear;
+  animation-delay: 1.7s;
+  background-color: transparent;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:2900;
+  animation-play-state:paused; 
+}
+
+
+@keyframes draw-up-y {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 23px;
+      height: 68px;
+      background-color: #191414;
+    }
+}
+
+
+
+
+.letter.Z {
+  position: relative;
+  /* border : 1px red solid; */
+  width:var(--w-box);
+  height:var(--h-box-lg);
+  margin-left:50px;
+  margin-top:25px;
+}
+
+
+.letter.Z > .pillar :nth-child(1){                   /* 2. draw right-left upper pillar */
+  position: absolute;
+  
+  top: 135px;
+  left: 31px;
+  background-color: transparent;
+  animation: draw-right-z-upper 0.6s linear ;
+  animation-delay: 1.8s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-right-z-upper {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+    
+   
+    100% {
+      width: 58px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
+.letter.Z > .pillar :nth-child(2){                /* 3. draw left-right middle pillar */
+  position: absolute;
+  top: 23px;
+  left: -11.5px;
+  background-color: transparent;
+  animation: draw-right-z-upper 0.6s linear ;
+  animation-delay: 0.1s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+
+
+.letter.Z > .pillar :nth-child(3){                /* 2. left-right upper ball */
+  position: absolute;
+  top: 79px;
+  left: -1px;
+  width: 23px;
+  height: 23px;
+  background-color: #fae62d;
+  animation: move-right-z-upper11111 0.6s linear ;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index:900;
+  animation-play-state:paused; 
+}
+
+@keyframes move-right-z-upper11111 {
+  0% {
+    top: 79px;
+  left: -1px;
+      background-color: #fae62d;
+    }
+    
+    99.9% {
+      top: 79px;
+    left: 36px;
+       background-color:#fae62d;
+      
+    }
+  100% {
+    top: 79px;
+  left: 36px;
+     background-color: transparent;
+    
+  }
+}
+
+.letter.Z > .pillar :nth-child(4){                /* 3. right-left under ball */
+  position: absolute;
+  top: 135px;
+  right: 12px;
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  animation: move-left-z-under 0.5s linear ;
+  animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+  z-index:2300;
+  animation-play-state:paused; 
+}
+
+@keyframes move-left-z-under {
+  0% {
+    top: 135px;
+    left: 10.5px;
+      background-color: #fae62d;
+    }
+    
+   
+  100% {
+    top: 135px;
+     left: 68px;
+     background-color: #fae62d;
+    
+  }
+}
+
+
+
+.letter.Z > .semi-circle :nth-child(1){                /* 1. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 79px;
+  left: 10px;
+  z-index:  900;
+  animation-play-state:paused; 
+}
+
+
+.letter.Z > .semi-circle > .semi-circle-inner :nth-child(1){   /* 1. inner rotate square */
+  position: absolute;
+  top: 0px;
+  left: 46px  ;
+  background: #191414;
+  transform-origin: 0px 39px;
+  
+  
+  animation-name: rotate-vertical-z-upper33333;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+  z-index:600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-z-upper33333 {
+
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-180deg);
+  }
+
+}
+
+
+.letter.Z > .semi-circle :nth-child(2){                      /* 2. inner rotate lead ball */
+  position: absolute;
+  
+  top: 0px;
+  left: -1px;
+  
+  animation: move-right-z-ball 0.6s linear ;
+  background-color:transparent;
+  
+  overflow: hidden;
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 0.6s;
+   
+  opacity: 1;
+  z-index:1000;
+  animation-play-state:paused; 
+
+}
+
+
+@keyframes move-right-z-ball {
+  0% {
+    top: 24px;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: transparent;
+    }
+    
+    100% {
+      top: 79px;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.Z > .semi-circle :nth-child(3){                /* 3. inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 102px;
+  left: 33px;
+  z-index:1500;
+}
+
+
+.letter.Z > .semi-circle :nth-child(4){                 /* 4. blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 22px;
+  left: -7px;
+  transform: translateX(-25%);
+  z-index:1050;
+
+
+}
+
+
+
+
+@keyframes move-right-circle-lead-z-upper {
+  0% {
+
+      transform: rotate( -45deg);
+      background: #fae62d;
+      
+    }
+    
+    
+    100%{
+      transform: rotate(-180deg);
+     
+      background: #fae62d;
+    }
+}
+
+
+
+
+.letter.Z > .semi-circle :nth-child(5){                /* 0. outer  semi-circle */
+  position: absolute;
+  background: #1fc582;
+  overflow: hidden;
+  top: 23px;
+  left: -10px;
+  z-index:  960;
+}
+
+
+.letter.Z > .semi-circle > .semi-circle-inner22 :nth-child(1){   /* 2. inner rotate square */
+
+  position: absolute;
+  top: 0px;
+  left: -38px  ;
+  background: #191414;
+  transform-origin: 80px 23px;
+  
+  
+  animation-name: rotate-vertical-z-under1122;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+  z-index:6600;
+  animation-play-state:paused; 
+}
+
+
+
+@keyframes rotate-vertical-z-under1122 {
+
+  0%{
+    top: 23px;
+  left: -38px  ;
+    transform: rotate(0deg);
+  }
+
+  100%{
+    top: 23px;
+  left: -38px  ;
+    transform: rotate(180deg);
+  }
+
+}
+
+
+.letter.Z > .semi-circle :nth-child(6){                      /* inner rotate lead ball */
+  position: absolute;
+  
+  top: 79px;
+  left:34px;
+  /*  */
+  /* transform: translateX(-50%); */
+  
+  animation: rotate-vertical-lead-z 0.6s linear ;
+  background-color:transparent;
+  transform-origin: 0px 40px;
+
+  /* overflow: hidden; */
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+
+  animation-delay: 0.6s;
+  /* animation-direction:initial; */
+  z-index:850;
+  animation-play-state:paused; 
+}
+
+
+@keyframes rotate-vertical-lead-z {
+
+  0%{
+    transform: rotate( 0deg);
+    background: #fae62d;
+  }
+  
+  100%{
+    transform: rotate(180deg);
+   
+    background: #fae62d;
+  }
+  
+  }
+  
+
+@keyframes move-right-z {
+  0% {
+    top: 79px;
+    left: -1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+    
+   
+    100% {
+      top: 79px;
+      left: 38px;
+      width: 23px;
+      height: 23px;
+      background-color: #fae62d;
+    }
+}
+
+.letter.Z > .semi-circle :nth-child(7){                /* inner center #fae62d ball */
+  position: absolute;
+  background-color: #1fc582;
+  top: 46px;
+  left: 13px;
+  z-index:1500;
+}
+
+
+.letter.Z > .semi-circle :nth-child(8){    /* blanket upper */
+  position: absolute;
+  background: #1fc582;
+  top: 79px;
+  left: 47px;
+  z-index:970;
+  animation: flip-vertical-z 0.1s linear ;
+  
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  animation-delay: 1.51s;
+  animation-play-state:paused; 
+}
+
+
+@keyframes flip-vertical-z {
+  0% {
+
+      }
+    
+   
+    100% {
+
+    }
+}
+
+
+.letter.Z > .semi-circle :nth-child(9){                   /* 9. draw right-left upper pillar */
+  position: absolute;
+  
+  top: 79px;
+  right: -17.5px;
+  background-color: transparent;
+  animation: draw-left-z-bottom 0.6s linear ;
+  animation-delay: 0.6s;
+  /* animation-direction:initial; */
+  animation-fill-mode: forwards;
+  z-index:1900;
+  animation-play-state:paused; 
+}
+
+@keyframes draw-left-z-bottom {
+  0% {
+      width: 23px;
+      height: 23px;
+      background-color: #191414;
+    }
+    
+   
+    100% {
+      width: 97px;
+      height: 23px;
+      background-color: #191414;
+    }
+}
+
